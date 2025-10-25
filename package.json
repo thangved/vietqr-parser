@@ -1,0 +1,47 @@
+{
+  "name": "@thangvedd/vietqr-parser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/cjs/index.cjs",
+  "scripts": {
+    "build": "NODE_ENV=production tsup && npm run check-exports && npm run lint:package",
+    "check-exports": "attw --pack .",
+    "dev": "tsup --watch",
+    "lint:package": "publint",
+    "test": "vitest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.2",
+    "publint": "^0.3.15",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.3"
+  },
+  "exports": {
+    ".": {
+      "browser": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.cts",
+        "default": "./dist/cjs/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "types": "./dist/esm/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  }
+}
